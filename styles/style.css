@@ -12,6 +12,8 @@
 @font-face { font-family: FuturaStdBold; src: url('FuturaStd Bold.ttf'); }
 @font-face { font-family: LiberationSans; 
   src: url('LiberationSans-Regular.ttf'); }
+@font-face { font-family: LiberationSans; font-weight: bold;
+  src: url('LiberationSans-Bold.ttf'); }
 
 
 html, body {
@@ -33,7 +35,7 @@ header {
 }
 
 div#header-interior {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -90,23 +92,39 @@ div.gallery#g2 {
   
 
 div.colored-section {
-  padding: 20px 10%;
+  padding: 20px 20%;
   margin: 0;
+  color: #ffffff;
 }
 
 div.colored-section.cs-1 {
   background-color: #006BA6;
-  color: #ffffff;
 }
 
 div.colored-section.cs-2 {
   background-color: #0496FF;
-  color: #ffffff;
 }
 
 div.colored-section.cs-3 {
   background-color: #FFBC42;
-  color: #ffffff;
+}
+
+div.colored-section.cs-4 {
+  background-color: #D81159;
+}
+
+div.colored-section a.in-text-link {
+  text-decoration: none;
+  color: #dddddd;
+  font-weight: bold;
+}
+
+div.colored-section a.in-text-link:hover {
+  color: #D81159;
+}
+
+div.colored-section.cs-4 a.in-text-link:hover {
+  color: #0496FF;
 }
 
 h2.center {
