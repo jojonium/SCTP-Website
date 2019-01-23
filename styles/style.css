@@ -78,21 +78,34 @@ div.gallery {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+div.gallery#g1 {
   background-image: url('../media/tai-kwun-1.jpg');
 }
+
+div.gallery#g2 {
+  background-image: url('../media/tai-kwun-2.jpg');
+}
+  
 
 div.colored-section {
   padding: 20px 10%;
   margin: 0;
 }
 
-div.colored-section.cs-one {
+div.colored-section.cs-1 {
   background-color: #006BA6;
   color: #ffffff;
 }
 
-div.colored-section.cs-two {
+div.colored-section.cs-2 {
   background-color: #0496FF;
+  color: #ffffff;
+}
+
+div.colored-section.cs-3 {
+  background-color: #FFBC42;
   color: #ffffff;
 }
 
@@ -121,6 +134,10 @@ a.box-link:hover {
   color: #0496ff;
 }
 
+main img {
+  width: 100%;
+}
+
 
 /****** Mobile ******/
 @media screen and (max-width: 800px) {
@@ -129,7 +146,7 @@ a.box-link:hover {
   }
   
   header div h1 {
-    font-size: 1.25em;
+    font-size: 2em;
   }
   
   header nav a {
