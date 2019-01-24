@@ -1,7 +1,7 @@
 /******* Colors ******/
 /*
  * #006BA6
- * #0496FF
+ * #5DD9C1
  * #FFBC42
  * #D81159
  * #8f2D56
@@ -119,7 +119,7 @@ div.colored-section.cs-1 {
 }
 
 div.colored-section.cs-2 {
-  background-color: #0496FF;
+  background-color: #5DD9C1;
 }
 
 div.colored-section.cs-3 {
@@ -141,7 +141,7 @@ div.colored-section a.in-text-link:hover {
 }
 
 div.colored-section.cs-4 a.in-text-link:hover {
-  color: #0496FF;
+  color: #;
 }
 
 h2.center {
@@ -166,7 +166,7 @@ a.box-link {
 
 a.box-link:hover {
   background-color: #ffffff;
-  color: #0496ff;
+  color: #5DD9C1;
 }
 
 main img {
