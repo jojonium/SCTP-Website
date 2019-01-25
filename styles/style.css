@@ -185,8 +185,24 @@ a.box-link span {
 
 a.box-link:hover {
   background-color: #ffffff;
+}
+
+a.box-link.bl-1:hover {
+  color: #006BA6;
+}
+
+a.box-link.bl-2:hover {
   color: #5DD9C1;
 }
+
+a.box-link.bl-3:hover {
+  color: #FFBC42;
+}
+
+a.box-link.bl-4:hover {
+  color: #D81159;
+}
+
 
 main img {
   width: 100%;
