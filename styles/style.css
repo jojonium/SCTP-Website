@@ -197,11 +197,19 @@ main img {
 @media screen and (max-width: 800px) {
   div#header-interior {
     width: 100%;
-    padding: 10px 20px 0 20px;
+    padding: 10px 0 0 20px;
   }
   
   header div h1 {
     font-size: 2em;
+  }
+  
+  header nav {
+    top: 3px;
+  }
+  
+  header nav#sites {
+    top: 5px;
   }
   
   header nav a {
