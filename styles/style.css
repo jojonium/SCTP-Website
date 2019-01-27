@@ -120,6 +120,13 @@ div.gallery#g4 {
   background-image: url('../media/tai-kwun-4.jpg');
 }
 
+div.gallery#g5 {
+  background-image: url('../media/pmq-1.jpg');
+}
+
+div.gallery#g6 {
+  background-image: url('../media/pmq-2.jpg');
+}
 
 div.colored-section {
   padding: 20px 20%;
