@@ -128,6 +128,14 @@ div.gallery#g6 {
   background-image: url('../media/pmq-2.jpg');
 }
 
+div.gallery#g7 {
+  background-image: url('../media/central-market-1.jpg');
+}
+
+div.gallery#g8 {
+  background-image: url('../media/central-market-2.jpg');
+}
+
 div.colored-section {
   padding: 20px 20%;
   margin: 0;
