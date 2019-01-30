@@ -5,9 +5,13 @@
     <meta name="description" content="The Smart Cultural Triangle Precinct is 
     an area of unique culture and heritage in Hong Kong's Central district">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tours | Smart Cultural Triangle Precinct</title>
+    <title>Map | Smart Cultural Triangle Precinct</title>
     <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="styles/map.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/map.js"></script>
   </head>
   <body>
     <header>
@@ -15,7 +19,7 @@
         <h1>Smart Cultural Triangle Precinct</h1>
         <nav>
           <a href="/">Home</a>
-          <a href="tours" class="selected">Tours</a>
+	  <a href="map" class="selected">Map</a>
           <a href="gallery">Gallery</a>
           <a href="javascript:openSites()" id="sites-btn">Sites</a>
         </nav>
@@ -28,12 +32,16 @@
     </header>
 
     <main>
-      <div class="colored-section cs-1">
-        <h2>Under Construction</h2>
-
-        <p>
-	This page is still under construction. Check back later.
-        </p>
+      <div id="map-container">
+        <div id="mapDiv"></div>
+        <div id="right-bar">
+          <h2>In the Triangle</h2>
+          
+          <p>
+          Click on any of the points of interest on the map to see detailed 
+          information about that location.
+          </p>
+        </div>
       </div>
     </main>
   </body>
