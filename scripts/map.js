@@ -1,25 +1,16 @@
-var fromProjection = new OpenLayers.Projection("EPSG:4326");
-var toProjection   = new OpenLayers.Projection("EPSG:900913");
-var extent = new OpenLayers.Bounds(114.145,22.275,114.16,22.29)
-  .transform(fromProjection,toProjection);
+window.onload = () => {
+	var mymap = L.map('mapDiv').setView([22.282, 114.154], 17);
+	L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    		attribution: `&copy;
+			<a href="https://www.openstreetmap.org/copyright">
+				OpenStreetMap
+			</a>`,
+    		subdomains: ['a','b','c']
+	}).addTo( mymap );
 
-window.onload = function() {
-  var options = {
-    restrictedExtent: extent,
-    controls: [
-      new OpenLayers.Control.Navigation(),
-      new OpenLayers.Control.PanZoomBar()
-    ]
-  };
-
-  map = new OpenLayers.Map("mapDiv", options);
-
-  var newLayer = new OpenLayers.Layer.OSM();
-  var position = new OpenLayers.LonLat(114.153, 22.283)
-    .transform(fromProjection, toProjection);
-
-  console.log(position);
-  map.addLayer(newLayer);
-  map.setCenter(position, 17);
+	var triangle = L.polygon([
+		[22.28366, 114.15095],
+		[22.27983, 114.15420],
+		[22.28413, 114.15649]
+	]).addTo(mymap);
 }
-
