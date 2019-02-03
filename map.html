@@ -33,18 +33,23 @@
     <main>
       <div id="map-container">
         <div id="mapDiv"></div>
-        <div id="right-bar">
-          <h2 id="rb-title">In the Triangle</h2>
-          
-          <h3 id="rb-subtitle"></h3>
-          
-          <div id="right-bar-content">
-            <p id="rb-content">
-            Click on any of the points of interest on the map to see detailed 
-            information about that location.
-            </p>
-          
-            <p id="rb-source"></p>
+        <div id="right-bar-exterior">
+          <div id="toggle-bar">
+            Historic Sites <input id="hs-cb" type="checkbox" checked="checked" onclick="toggleHS();">
+          </div>
+          <div id="right-bar-interior">
+            <h2 id="rb-title">In the Triangle</h2>
+            
+            <h3 id="rb-subtitle"></h3>
+            
+            <div id="right-bar-content">
+              <p id="rb-content">
+              Click on any of the points of interest on the map to see detailed 
+              information about that location.
+              </p>
+            
+              <p id="rb-source"></p>
+            </div>
           </div>
         </div>
       </div>
