@@ -1,19 +1,8 @@
-div#mapDiv {
-  width: 80%;
-  height: 100%;
-}
-
-div#map-container {
-  width: 100%;
+main {
   flex-grow: 1;
+  height: initial;
   display: flex;
-}
-
-div#right-bar {
-  width: 20%;
-  background-color: #D81159;
-  color: white;
-  padding: 20px;
+  flex-direction: column;
 }
 
 html, body {
@@ -26,9 +15,62 @@ body > *, main > * {
   flex-shrink: 0;
 }
 
-main {
+div#mapDiv {
+  width: 80%;
+  height: 100%;
+  z-index: 1;
+}
+
+div#map-container {
+  width: 100%;
   flex-grow: 1;
-  height: initial;
+  display: flex;
+  position: relative;
+}
+
+div#right-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  min-width: 440px;
+  background-color: #D81159;
+  color: white;
+  padding: 40px;
+  overflow-y: scroll;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+
+div#right-bar-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+p#rb-content {
+  flex-grow: 1;
+  margin: 0;
+}
+
+p#rb-source {
+  font-size: .75em;
+}
+
+div#right-bar a {
+  text-decoration: none;
+  color: #dddddd;
+  font-weight: bold;
+}
+
+div#right-bar a:hover {
+  color: #006BA6;
+}
+
+h3#rb-subtitle {
+  margin-top: .5em;
 }

@@ -19,7 +19,7 @@
         <h1>Smart Cultural Triangle Precinct</h1>
         <nav>
           <a href="/">Home</a>
-	  <a href="map" class="selected">Map</a>
+          <a href="map" class="selected">Map</a>
           <a href="gallery">Gallery</a>
           <a href="javascript:openSites()" id="sites-btn">Sites</a>
         </nav>
@@ -35,17 +35,18 @@
       <div id="map-container">
         <div id="mapDiv"></div>
         <div id="right-bar">
-          <h2>In the Triangle</h2>
+          <h2 id="rb-title">In the Triangle</h2>
           
-          <p>
-          Click on any of the points of interest on the map to see detailed 
-          information about that location.
-          </p>
-
-	  <p>
-	  Note: this page is still under construction and is not optimized for
-	  mobile yet.
-	  </p>
+          <h3 id="rb-subtitle"></h3>
+          
+          <div id="right-bar-content">
+            <p id="rb-content">
+            Click on any of the points of interest on the map to see detailed 
+            information about that location.
+            </p>
+          
+            <p id="rb-source"></p>
+          </div>
         </div>
       </div>
     </main>
