@@ -165,11 +165,7 @@ div.colored-section a.in-text-link {
 }
 
 div.colored-section a.in-text-link:hover {
-  color: #D81159;
-}
-
-div.colored-section.cs-4 a.in-text-link:hover {
-  color: #006BA6;
+  color: #ffffff;
 }
 
 h2.center {
