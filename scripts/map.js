@@ -47,7 +47,7 @@ historicSites[21] = new GHS(22.284954, 114.149591, "Upper Lascar Road: Chinese A
 /* Initialize the map */
 window.onload = () => {
 	var mymap = L.map('mapDiv').setView([22.282, 114.154], 17);
-	L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     		attribution: `&copy;
 			<a href="https://www.openstreetmap.org/copyright">
 				OpenStreetMap
