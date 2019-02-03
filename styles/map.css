@@ -74,7 +74,7 @@ div#right-bar-interior a {
 }
 
 div#right-bar-interior a:hover {
-  color: #006BA6;
+  color: #ffffff;
 }
 
 h3#rb-subtitle {
@@ -103,5 +103,6 @@ div#toggle-bar {
   div#right-bar-exterior {
     position: relative;
     width: 100%;
+    min-width: 0;
   }
 }
