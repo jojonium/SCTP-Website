@@ -83,6 +83,7 @@ h3#rb-subtitle {
   
   div#mapDiv {
     width: 100%;
+    min-width: 0;
     height: 100%;
   }
   
