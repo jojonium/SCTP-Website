@@ -1,4 +1,8 @@
-/* Graded Historic Site constructor */
+/* globals */
+var mymap;
+var historicSites  = new Array(22);
+
+/* Graded Historic Site class */
 class GHS {
   constructor(lat, lon, name, grade, type, comments) {
     this.lat = lat;
@@ -19,8 +23,6 @@ var showGHS = (index) => {
   document.getElementById("rb-source").innerHTML = `Source: <a href="http://www5.lcsd.gov.hk/internet/index.html">Geographic Information System on Hong Kong Heritage</a>`;
 }
 
-var historicSites  = new Array(22);
-
 historicSites[0] = new GHS(22.280058, 114.156045, "Bishop's House", 1, "Historic Building", "The Bishop's House was originally built in 1848 and rebuilt in 1851. Part of the premises was used as a school of St. Paul's College. It now serves as the office of the Anglican Archbishop of Hong Kong.");
 historicSites[1] = new GHS(22.2813893, 114.1539173, "Central Police Station Compound", 1, "Historic Building & Anchoring Buildings", "Contains the Victoria Prison, The Magistracy, and the Central Police Station");
 historicSites[2] = new GHS(22.2838935, 114.1493964, "Chinese Y.M.C.A. of Hong Kong", 1, "Historic Building", "Built in 1918, the Chinese Young Men's Chinese Association of Hong Kong Central Building was used as the headquarters of Chinese YMCA of Hong Kong until 1966. The premise was well-equipped with modern facilities at that time, including the first indoor swimming pool in Hong Kong and sports playground with a jogging track. The notable Chinese writer Lu Hsun once lectured in the Building in 1927. During the Second World War, the Building was used as the headquarters of the A. R. P. (Section A of Mid-level) which served thousands of refugees. During the Japanese Occupation (1941-1945), YMCA was under the control of the Education Department of the Japanese Government and offered Japanese and German courses. Since 1966, the building served as a centre for the youth after the headquarters moved to Waterloo Road.");
@@ -39,29 +41,41 @@ historicSites[14] = new GHS(22.283310, 114.150944, "Bridges Street Market", 3, "
 historicSites[15] = new GHS(22.284011, 114.155542, "Central Market", 3, "Historic Building & Anchoring Buildings", "");
 historicSites[16] = new GHS(22.283398, 114.154086, "No. 118 Wellington Street", 3, "Historic Building", "Built around 1923, No. 118 Wellington Street was the main office of Ching Loong Bakery which was founded in 1889 and registered a “Sunflower” trade mark in 1925. The main office was relocated to elsewhere in Wellington Street in 1952, to make way for Nam Wah Ink Company. In 1953, alterations and additions works were carried out to the building. In its heyday, the company had business dealings with publishing houses such as Chung Hwa Book Store, Commercial Press, Wah Kiu Yat Po, Kung Sheung Daily News, etc. On the other hand, the proprietors of the bakery and the ink company were full of benevolence towards the community. They donated generously, especially to promote children’s education. This 4-storey shophouse is built on an elongated rectangular plan. Its design involves a unique blending of pre-war high ceiling plan and post-war upper-floor open air balconies cantilevered over the pavement. The shop front is characterized by calligraphy featuring the name of the ink company and its main businesses. They were handwritten by a great calligrapher, Su Shi-jie (1883-1975).");
 historicSites[17] = new GHS(22.283398, 114.154086, "No. 62 Hollywood Street", 3, "Historic Building", "Land records show that the lease on No. 62 Hollywood Road (荷李活道 62 號) commenced in the 1850s, but it is not known when the lot was first built on. Judging from its appearance, the existing building at No. 62 Hollywood Road was probably built in the 1920s. It is now used as a café. Old shop signs in terrazzo finish on the pillars at its shop front, bearing Chinese characters \"振隆白米生油\" and \"振隆白米生油柴炭\", indicate that the shop was once a grocery store named \"振隆\". This grocery store ceased operation in 2005.");
-historicSites[18] = new GHS(22.283348, 114.151808, "Police Married Quarters (PMQ)", 3, "Historic Building & Anhoring Buildings", "");
+historicSites[18] = new GHS(22.283348, 114.151808, "Police Married Quarters (PMQ)", 3, "Historic Building & Anchoring Buildings", "");
 historicSites[19] = new GHS(22.283042, 114.153576, "Graham Street Markets", "Not Graded", "Street Markets", "Street Markets that Are predominately occupied by Produce and Meat Merchants. Very Heavy Foot Traffic from this area.");
 historicSites[20] = new GHS(22.283107, 114.153093, "Peel Street Markets", "Not Graded", "Street Markets", "Street Markets on Peel Street that sell clothes and other goods.");
 historicSites[21] = new GHS(22.284954, 114.149591, "Upper Lascar Road: Chinese Antique Street", "Not Graded", "Street Markets", "Pedestrian Area with Street Shops & Galleries");
 
 /* Initialize the map */
 window.onload = () => {
-	var mymap = L.map('mapDiv').setView([22.282, 114.154], 17);
-	L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    		attribution: `&copy;
-			<a href="https://www.openstreetmap.org/copyright">
-				OpenStreetMap
-			</a>`,
-    		subdomains: ['a','b','c']
-	}).addTo( mymap );
+  mymap = L.map('mapDiv').setView([22.282, 114.154], 17);
+  L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: `&copy;
+    <a href="https://www.openstreetmap.org/copyright">
+      OpenStreetMap
+    </a>`,
+  subdomains: ['a','b','c']
+  }).addTo( mymap );
 
-	var triangle = L.polygon([
-		[22.28366, 114.15095],
-		[22.27983, 114.15420],
-		[22.28463, 114.15649]
-	]).addTo(mymap);
-    
-    for (let i = 0; i < 22; ++i) {
-      L.marker([historicSites[i].lat, historicSites[i].lon]).addTo(mymap).on('click', () => showGHS(i));
+  var triangle = L.polygon([
+    [22.28366, 114.15095],
+    [22.27983, 114.15420],
+    [22.28463, 114.15649]
+  ]).addTo(mymap);
+  
+  /* initially show all historic sites */
+  for (let i = 0; i < 22; ++i) {
+    historicSites[i].marker = L.marker([historicSites[i].lat, historicSites[i].lon]).addTo(mymap).on('click', () => showGHS(i));
+  }
+}
+
+/* Handle checkboxes changing */
+var toggleHS = () => {
+  for (let i = 0; i < 22; ++i) {
+    if (document.getElementById("hs-cb").checked) {
+      historicSites[i].marker.addTo(mymap);
+    } else {
+      historicSites[i].marker.remove();
     }
+  }
 }
