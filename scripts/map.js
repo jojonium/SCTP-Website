@@ -1,6 +1,26 @@
 /* globals */
 var mymap;
 var historicSites  = new Array(22);
+var foodAndBeverage = new Array(224);
+
+/* markers */
+var blueIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-blue.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var greenIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-green.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
 
 /* Graded Historic Site class */
 class GHS {
@@ -11,16 +31,41 @@ class GHS {
     this.grade = grade;
     this.type = type;
     this.comments = comments;
-  }
+  };
+  
+  /* displays info about this GHS in the right bar */
+  show = () => {
+    document.getElementById("rb-title").innerHTML = this.name;
+    document.getElementById("rb-subtitle").innerHTML = this.type;
+    document.getElementById("rb-content").innerHTML = this.comments;
+    document.getElementById("rb-source").innerHTML = 
+      `Source: <a href="http://www5.lcsd.gov.hk/internet/index.html">
+        Geographic Information System on Hong Kong Heritage
+      </a>`;
+  };
 }
 
-/* function for displaying the details of a Graded Historic Site */
-var showGHS = (index) => {
-  document.getElementById("rb-title").innerHTML = historicSites[index].name;
-  document.getElementById("rb-subtitle").innerHTML = historicSites[index].type;
-  /*document.getElementById("rb-subsubtitle").innerHTML = (historicSites[index].grade > 0) ? "AMO Historic Site, Grade " + historicSites[index].grade : historicSites[index].grade;*/
-  document.getElementById("rb-content").innerHTML = historicSites[index].comments;
-  document.getElementById("rb-source").innerHTML = `Source: <a href="http://www5.lcsd.gov.hk/internet/index.html">Geographic Information System on Hong Kong Heritage</a>`;
+/* Ground Level Location class */
+class GLL {
+  constructor(lat, lon, name, address, type, comments) {
+    this.lat = lat;
+    this.lon = lon;
+    this.name = name;
+    this.address = address;
+    this.type = type;
+    this.comments = comments;
+  };
+  
+  show = () => {
+    document.getElementById("rb-title").innerHTML = this.name;
+    document.getElementById("rb-subtitle").innerHTML = this.type;
+    document.getElementById("rb-content").innerHTML = 
+      `${this.comments} <br><br> ${this.address}`;
+    document.getElementById("rb-source").innerHTML = 
+      `Source: <a href="https://web.wpi.edu/Pubs/E-project/Available/E-project-032017-092307/unrestricted/WPI_IQP_2017_-_Heritage_Conservation_and_Online_Platform_in_the_Smart_Cultural_Triangle_Precinct,_Hong_Kong.pdf">
+        IQP Report
+      </a>`;
+  };
 }
 
 historicSites[0] = new GHS(22.280058, 114.156045, "Bishop's House", 1, "Historic Building", "The Bishop's House was originally built in 1848 and rebuilt in 1851. Part of the premises was used as a school of St. Paul's College. It now serves as the office of the Anglican Archbishop of Hong Kong.");
@@ -46,17 +91,29 @@ historicSites[19] = new GHS(22.283042, 114.153576, "Graham Street Markets", "Not
 historicSites[20] = new GHS(22.283107, 114.153093, "Peel Street Markets", "Not Graded", "Street Markets", "Street Markets on Peel Street that sell clothes and other goods.");
 historicSites[21] = new GHS(22.284954, 114.149591, "Upper Lascar Road: Chinese Antique Street", "Not Graded", "Street Markets", "Pedestrian Area with Street Shops & Galleries");
 
+
+/* Ground Level Location data */
+foodAndBeverage[0] = new GLL(22.281649, 114.152378, "12000 Francs", "43A Elgin Street", "Food and Beverage", "Bar");
+foodAndBeverage[1] = new GLL(22.282649, 114.152817, "121BC", "44 Peel Street", "Food and Beverage", "Italian Restaurant/Bar");
+foodAndBeverage[2] = new GLL(22.282501, 114.152371, "99 Bottles", "59A Peel Street", "Food and Beverage", "Bar");
+
 /* Initialize the map */
 window.onload = () => {
   mymap = L.map('mapDiv').setView([22.282, 114.154], 17);
   L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: `&copy;
+    subdomains: ['a','b','c']
+  }).addTo( mymap );
+  
+  /* Set attribution */
+  var attr = L.control.attribution({position: 'bottomleft'})
+    .setPrefix(`&copy;
     <a href="https://www.openstreetmap.org/copyright">
       OpenStreetMap
-    </a>`,
-  subdomains: ['a','b','c']
-  }).addTo( mymap );
+    </a> | <a href="https://leafletjs.com/"</a>
+      Leaflet
+    </a>`).addTo(mymap);
 
+  /* Draw the triangle */
   var triangle = L.polygon([
     [22.28366, 114.15095],
     [22.27983, 114.15420],
@@ -65,7 +122,12 @@ window.onload = () => {
   
   /* initially show all historic sites */
   for (let i = 0; i < 22; ++i) {
-    historicSites[i].marker = L.marker([historicSites[i].lat, historicSites[i].lon]).addTo(mymap).on('click', () => showGHS(i));
+    historicSites[i].marker = L.marker([historicSites[i].lat, historicSites[i].lon], {icon: blueIcon}).addTo(mymap).on('click', () => historicSites[i].show());
+  }
+  
+  /* initially show all Food and Beverage */
+  for (let i = 0; i < 3; ++i) {
+    foodAndBeverage[i].marker = L.marker([foodAndBeverage[i].lat, foodAndBeverage[i].lon], {icon: greenIcon}).addTo(mymap).on('click', () => foodAndBeverage[i].show());
   }
 }
 
@@ -76,6 +138,16 @@ var toggleHS = () => {
       historicSites[i].marker.addTo(mymap);
     } else {
       historicSites[i].marker.remove();
+    }
+  }
+}
+
+var toggleFB = () => {
+  for (let i = 0; i < 3; ++i) {
+    if (document.getElementById("fb-cb").checked) {
+      foodAndBeverage[i].marker.addTo(mymap);
+    } else {
+      foodAndBeverage[i].marker.remove();
     }
   }
 }
