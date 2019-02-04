@@ -56,11 +56,12 @@ class GLL {
     this.comments = comments;
   };
   
+  /* displays info about this GLL in the right bar */
   show = () => {
     document.getElementById("rb-title").innerHTML = this.name;
     document.getElementById("rb-subtitle").innerHTML = this.type;
     document.getElementById("rb-content").innerHTML = 
-      `${this.comments} <br><br> ${this.address}`;
+      `${this.address} <br><br> ${this.comments}`;
     document.getElementById("rb-source").innerHTML = 
       `Source: <a href="https://web.wpi.edu/Pubs/E-project/Available/E-project-032017-092307/unrestricted/WPI_IQP_2017_-_Heritage_Conservation_and_Online_Platform_in_the_Smart_Cultural_Triangle_Precinct,_Hong_Kong.pdf">
         IQP Report
@@ -96,6 +97,84 @@ historicSites[21] = new GHS(22.284954, 114.149591, "Upper Lascar Road: Chinese A
 foodAndBeverage[0] = new GLL(22.281649, 114.152378, "12000 Francs", "43A Elgin Street", "Food and Beverage", "Bar");
 foodAndBeverage[1] = new GLL(22.282649, 114.152817, "121BC", "44 Peel Street", "Food and Beverage", "Italian Restaurant/Bar");
 foodAndBeverage[2] = new GLL(22.282501, 114.152371, "99 Bottles", "59A Peel Street", "Food and Beverage", "Bar");
+foodAndBeverage[3] = new GLL(22.282715, 114.151526, "Aberdeen Street", "41-49 Aberdeen Street", "Food and Beverage", "Western Vegetarian Restaurant");
+foodAndBeverage[4] = new GLL(22.284003, 114.15283, "Agnis b. Cafe", "8-10 Gough Street", "Food and Beverage", "French Dessert");
+foodAndBeverage[5] = new GLL(22.281791, 114.152854, "Al Dente", "16 Staunton Street", "Food and Beverage", "Italian Restaurant");
+foodAndBeverage[6] = new GLL(22.28273, 114.151473, "Al Forno", "41-49 Aberdeen Street", "Food and Beverage", "Italian Pizzeria");
+foodAndBeverage[7] = new GLL(22.282013, 114.15219, "AntiPasto", "25 Elgin Street", "Food and Beverage", "Italian Restaurant");
+foodAndBeverage[8] = new GLL(22.282108, 114.152815, "Awtar", "23 Staunton Street", "Food and Beverage", "Mediterranean Restaurant");
+foodAndBeverage[9] = new GLL(22.280233, 114.154582, "Balance Kitchen", "2 Artbuthnot Road", "Food and Beverage", "Cafe");
+foodAndBeverage[10] = new GLL(22.282698, 114.152193, "Bar Medusa", "49 Staunton Street", "Food and Beverage", "Bar");
+foodAndBeverage[11] = new GLL(22.282558, 114.154394, "Basement Bar & Cafe", "13 Lyndhurst Terrace", "Food and Beverage", "Western Restaurant");
+foodAndBeverage[12] = new GLL(22.282818, 114.153021, "Be Juiced Bar", "45 Peel Street", "Food and Beverage", "Juice Shop");
+foodAndBeverage[13] = new GLL(22.284417, 114.153267, "Bee Two", "166 Wellington Street", "Food and Beverage", "Coffee Shop");
+foodAndBeverage[14] = new GLL(22.282874, 114.151988, "Beer and Fish", "67 Staunton Street", "Food and Beverage", "Western Restaurant/Bar");
+foodAndBeverage[15] = new GLL(22.281617, 114.15234, "Belon", "41 Elgin Street", "Food and Beverage", "French Restaurant");
+foodAndBeverage[16] = new GLL(22.281926, 114.153013, "Bep", "9-11 Staunton Street", "Food and Beverage", "Vietnamese Restuarant");
+foodAndBeverage[17] = new GLL(22.283867, 114.153099, "Beyond Dessert", "39 Gage Street", "Food and Beverage", "Pastry Shop");
+foodAndBeverage[18] = new GLL(22.282695, 114.153698, "Beyrouth Bistro", "39 Lyndhurst Terrace", "Food and Beverage", "Lebanese Restaurant");
+foodAndBeverage[19] = new GLL(22.283583, 114.152437, "Bindaas Bar & Kitchen", "33 Aberdeen St", "Food and Beverage", "Indian Cusine");
+foodAndBeverage[20] = new GLL(22.283768, 114.151057, "Blue", "108 Hollywood Road", "Food and Beverage", "International/Western Restaurant/ Bar. Meat Specialty");
+foodAndBeverage[21] = new GLL(22.282559, 114.152444, "Bobby's Rabble Bar", "57 Peel Street", "Food and Beverage", "Bar");
+foodAndBeverage[22] = new GLL(22.282498, 114.152091, "Bocadito", "40 Staunton Street", "Food and Beverage", "Spanish Restaurant");
+foodAndBeverage[23] = new GLL(22.281441, 114.152474, "Boucham", "49 Elgin Street", "Food and Beverage", "French Restaurant");
+foodAndBeverage[24] = new GLL(22.282283, 114.152593, "Brooklyn", "29 Staunton Street", "Food and Beverage", "Bar");
+foodAndBeverage[25] = new GLL(22.281823, 114.151912, "Brunch Club", "70 Peel Street", "Food and Beverage", "All Day Breakfast");
+foodAndBeverage[26] = new GLL(22.282747, 114.151513, "Bun Cha", "41-49 Aberdeen Street", "Food and Beverage", "Vietnamese Restaurant");
+foodAndBeverage[27] = new GLL(22.28287, 114.154787, "Butao Ramen", "69 Wellington Street", "Food and Beverage", "Japanes/Ramen");
+foodAndBeverage[28] = new GLL(22.283272, 114.155166, "Cafe de Coral", "Stanley Street", "Food and Beverage", "Chinese Restrant");
+foodAndBeverage[29] = new GLL(22.282003, 114.152211, "Cafe De Paris", "23 Elgin Street", "Food and Beverage", "French Restaurant");
+foodAndBeverage[30] = new GLL(22.280889, 114.153311, "Cafe d'i", "Chancery Lane", "Food and Beverage", "cafe");
+foodAndBeverage[31] = new GLL(22.282415, 114.152734, "CenacoloSteak and Pasta", "45-53 Graham", "Food and Beverage", "Italian Steak House");
+foodAndBeverage[32] = new GLL(22.282688, 114.152552, "Chi Chi Cham", "53 Peel Street", "Food and Beverage", "Japanese Restaurant");
+foodAndBeverage[33] = new GLL(22.282801, 114.151777, "Chom Chom Burger", "58-60 Staunton Street", "Food and Beverage", "Vietnamese Deli");
+foodAndBeverage[34] = new GLL(22.2815, 114.152404, "Cicada", "47A Elgin", "Food and Beverage", "Bar");
+foodAndBeverage[35] = new GLL(22.283792, 114.151083, "Classified", "108 Hollywood Road", "Food and Beverage", "Western/All Day Breakfast/Coffee Restaurant");
+foodAndBeverage[36] = new GLL(22.282146, 114.152718, "Club 1911", "27 Staunton Street", "Food and Beverage", "Bar");
+foodAndBeverage[37] = new GLL(22.283912, 114.152293, "Cocotte", "9 Shin Hing Street", "Food and Beverage", "French Restaurant");
+foodAndBeverage[38] = new GLL(22.283279, 114.150992, "Common Ground Coffee Shop", "19 Shing Wong Street", "Food and Beverage", "Coffee Shop");
+foodAndBeverage[39] = new GLL(22.282123, 114.156143, "Cookie Galerie", "Queen's Road Central", "Food and Beverage", "Food Shop");
+foodAndBeverage[40] = new GLL(22.282973, 114.150902, "Cozy Bean", "12 Shing Wong Street", "Food and Beverage", "");
+foodAndBeverage[41] = new GLL(22.283126, 114.154495, "Cupping room", "18 Conchrane Street", "Food and Beverage", "Cafe");
+foodAndBeverage[42] = new GLL(22.282024, 114.152428, "Cutty Sark", "20 Elgin Street", "Food and Beverage", "Bar");
+foodAndBeverage[43] = new GLL(22.282251, 114.153215, "Dacha Restaurant and Bar", "38-40 Hollywood Road", "Food and Beverage", "Middle Eastern Restaurant");
+foodAndBeverage[44] = new GLL(22.282066, 114.152158, "De Belge Bar", "21 Elgin Street", "Food and Beverage", "Belgian Bar");
+foodAndBeverage[45] = new GLL(22.282728, 114.15255, "Ding Dim", "14D Elgin Street", "Food and Beverage", "Dim Sum Restaurant");
+foodAndBeverage[46] = new GLL(22.283638, 114.155542, "Dragon Restaurant", "12 Queen Victoria Street", "Food and Beverage", "Chinese Restaurant");
+foodAndBeverage[47] = new GLL(22.282406, 114.154582, "Dream Tofa", "16 Lyndhurst Terrace", "Food and Beverage", "Dessert Shop");
+foodAndBeverage[48] = new GLL(22.283713, 114.154119, "Dream.The Bread", "97A Wellington Street", "Food and Beverage", "Western Bakery and Restaurant");
+foodAndBeverage[49] = new GLL(22.28231, 114.153518, "Ebi Kin", "39-43 Hollywood Road", "Food and Beverage", "Ramen Restaurant");
+foodAndBeverage[50] = new GLL(22.283203, 114.153073, "Edition", "37 Peel Street", "Food and Beverage", "Korean Restaurant");
+foodAndBeverage[51] = new GLL(22.282398, 114.154757, "Ee Da Lee", "8 Lyndhurst Terrace", "Food and Beverage", "Italian Restaurant");
+foodAndBeverage[52] = new GLL(22.284592, 114.152862, "El Postre Delicioso", "12 Kau U Fong", "Food and Beverage", "");
+foodAndBeverage[53] = new GLL(22.28287, 114.154308, "Emack & Balio's", "26 Cochrane Street", "Food and Beverage", "Ice Cream");
+foodAndBeverage[54] = new GLL(22.281566, 114.152396, "Enotaca On Elgin", "47 Elgin Street", "Food and Beverage", "Mediterranean Restaurant");
+foodAndBeverage[55] = new GLL(22.280796, 114.152515, "Eric Kayser Bakery", "38 Caine Road", "Food and Beverage", "Bakery");
+foodAndBeverage[56] = new GLL(22.2821, 114.153532, "FAB Bistro", "30 Hollywood Road", "Food and Beverage", "Steakhouse");
+foodAndBeverage[57] = new GLL(22.282023, 114.156238, "Fairwood", "38-48 Queen's Road Central", "Food and Beverage", "Chinese Restaurant");
+foodAndBeverage[58] = new GLL(22.2831, 114.154524, "Feather and Bone", "18 Cochrane Street", "Food and Beverage", "Meat and Produce Market");
+foodAndBeverage[59] = new GLL(22.282598, 114.15072, "Filters Lane", "111 Caine Road", "Food and Beverage", "Coffee Shop");
+foodAndBeverage[60] = new GLL(22.282722, 114.152877, "Fine Print Bar", "38 Peel Street", "Food and Beverage", "Coffer Shop");
+foodAndBeverage[61] = new GLL(22.28245, 114.152123, "Flaming Frango", "36B Staunton Street", "Food and Beverage", "Portuguese Bar/Restaurant");
+foodAndBeverage[62] = new GLL(22.281996, 114.152208, "Flutes Champagne and Cocktails", "27 Elgin Street", "Food and Beverage", "Bar");
+foodAndBeverage[63] = new GLL(22.282302, 114.153176, "Force 8", "42-42A Hollywood Road", "Food and Beverage", "Wine Store");
+foodAndBeverage[64] = new GLL(22.282716, 114.152864, "Fresca Restaurant", "54A Hollywood Road", "Food and Beverage", "Organic Snake Shop/Restaurant");
+foodAndBeverage[65] = new GLL(22.283469, 114.15332, "Fresco Cafe", "28 Gage Street", "Food and Beverage", "Bakery and Cafe");
+foodAndBeverage[66] = new GLL(22.284463, 114.152497, "Ginger Whisky Bar", "12 On Wo Lane", "Food and Beverage", "");
+foodAndBeverage[67] = new GLL(22.283159, 114.149319, "Glorious Fast Food", "147c Caine Road", "Food and Beverage", "Traditional Chinese Restaurant");
+foodAndBeverage[68] = new GLL(22.284237, 114.15214, "Goughs", "40 Gough Street", "Food and Beverage", "Western");
+foodAndBeverage[69] = new GLL(22.283773, 114.151078, "Grassroots Pantry", "108 Hollywood Road", "Food and Beverage", "International/Vegetarian/Coffee Shop/ Bar");
+foodAndBeverage[70] = new GLL(22.282145, 114.151948, "Hazel and Hershey", "69 Peel Street", "Food and Beverage", "Coffee Shop");
+foodAndBeverage[71] = new GLL(22.282876, 114.15241, "Himalaya", "13 Elgin Street", "Food and Beverage", "Indian Restaurant");
+foodAndBeverage[72] = new GLL(22.283035, 114.152468, "Ho Lee Fook", "1 Elgin Street", "Food and Beverage", "Asian Fusion Restaurant");
+foodAndBeverage[73] = new GLL(22.281459, 114.152959, "Iberico & Co.", "18 Shelley Street", "Food and Beverage", "Spanish Restaurant");
+foodAndBeverage[74] = new GLL(22.281963, 114.152984, "Ichitora", "13 Staunton Street", "Food and Beverage", "Japanese Ramen");
+foodAndBeverage[75] = new GLL(22.280976, 114.15275, "Insta Crepe", "65 Elgin Street", "Food and Beverage", "French Desert Cafe");
+foodAndBeverage[76] = new GLL(22.280334, 114.153379, "IPC Food Lab", "28 Caine Road", "Food and Beverage", "International Vegetarian Restaurant");
+foodAndBeverage[77] = new GLL(22.282825, 114.151623, "Ippoh", "39 Aberdeen Street", "Food and Beverage", "Japanese Restaurant");
+foodAndBeverage[78] = new GLL(22.282425, 114.153802, "Itachi Sushi", "44 Lyndhurst Terrace", "Food and Beverage", "Japanese Restaurant");
+foodAndBeverage[79] = new GLL(22.282702, 114.151904, "J48", "48 Staunton Street", "Food and Beverage", "Korean Bar");
+foodAndBeverage[80] = new GLL(22.282463, 114.152145, "Jaspa's Restaurant", "38-30 Staunton Street", "Food and Beverage", "Mediterranean Restaurant");
 
 /* Initialize the map */
 window.onload = () => {
@@ -126,7 +205,7 @@ window.onload = () => {
   }
   
   /* initially show all Food and Beverage */
-  for (let i = 0; i < 3; ++i) {
+  for (let i = 0; i < 80; ++i) {
     foodAndBeverage[i].marker = L.marker([foodAndBeverage[i].lat, foodAndBeverage[i].lon], {icon: greenIcon}).addTo(mymap).on('click', () => foodAndBeverage[i].show());
   }
 }
@@ -143,7 +222,7 @@ var toggleHS = () => {
 }
 
 var toggleFB = () => {
-  for (let i = 0; i < 3; ++i) {
+  for (let i = 0; i < 80; ++i) {
     if (document.getElementById("fb-cb").checked) {
       foodAndBeverage[i].marker.addTo(mymap);
     } else {
