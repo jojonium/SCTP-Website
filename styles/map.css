@@ -87,6 +87,10 @@ div#toggle-bar {
   padding: 10px;
 }
 
+div.leaflet-bottom.leaflet-right {
+  display: none;
+}
+
 /****** Rules for mobile ******/
 @media screen and (max-width: 800px) {
   div#map-container {
