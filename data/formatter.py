@@ -3,6 +3,7 @@ i = 0
 of = open("out.txt", "w")
 
 def process(line, i):
+    print(i)
     values = line.split(',')
     if not values[6]:
         comments = " "
