@@ -1,7 +1,8 @@
 /* globals */
 var mymap;
 var historicSites  = new Array(22);
-var foodAndBeverage = new Array(224);
+var foodAndBeverage = new Array(196);
+var retail = new Array(138);
 
 /* markers */
 var blueIcon = new L.Icon({
@@ -15,6 +16,15 @@ var blueIcon = new L.Icon({
 
 var greenIcon = new L.Icon({
 	iconUrl: 'scripts/img/marker-icon-2x-green.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var yellowIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-yellow.png',
 	shadowUrl: 'scripts/img/marker-shadow.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
@@ -291,6 +301,146 @@ foodAndBeverage[193] = new GLL(22.282917, 114.152417, "WTF Bar and Restaurant", 
 foodAndBeverage[194] = new GLL(22.283584, 114.150534, "YardBird", "33-35 Bridges Street", "Food and Beverage", "Japanese Restaurant");
 foodAndBeverage[195] = new GLL(22.282254, 114.152207, "何蘭正", "65 Peel Street", "Food and Beverage", "Bar");
 
+retail[0] = new GLL(22.284423, 114.153273, "7 Eleven", "166 Wellington Street", "Retail", "Retail Supermarket");
+retail[1] = new GLL(22.282828, 114.151657, "9 Lives", "37 Aberdeen Street", "Retail", "Pet Food Store");
+retail[2] = new GLL(22.281845, 114.156981, "Abercrombie & Fitch", "12 Pedder Street", "Retail", "Clothes");
+retail[3] = new GLL(22.283813, 114.15268, "ABoutique", "19 Aberdeen Street", "Retail", "Small Business; Boutique");
+retail[4] = new GLL(22.282522, 114.156137, "Adidas", "36 Queen's Road Central", "Retail", "Sports Shop");
+retail[5] = new GLL(22.282279, 114.153166, "Aesop", "42 Hollywood Road", "Retail", "Self Cleaning Supplies Store");
+retail[6] = new GLL(22.280785, 114.156033, "Air Jordan", "2-8 Wellington Street", "Retail", "Clothes & Shoes");
+retail[7] = new GLL(22.282963, 114.154704, "Alice Fashion", "67 Wellington Street", "Retail", "Women's Clothing Store");
+retail[8] = new GLL(22.282713, 114.154141, "Aluminium Urban Living", "36 Cochrane Street", "Retail", "Appliances and Furniture");
+retail[9] = new GLL(22.282566, 114.154406, "Anglo Chinese Florist", "13 Lyndhurst Terrace", "Retail", "Flower Shop");
+retail[10] = new GLL(22.280244, 114.155347, "BC Shop", "31A Wyndham Street", "Retail", "Fitness Shop");
+retail[11] = new GLL(22.282189, 114.152312, "Beatriz de Silva", "58-60 Peel Street", "Retail", "Clothing Store");
+retail[12] = new GLL(22.282387, 114.154348, "Benefit Cosmetics", "22 Lyndhurst Terrace", "Retail", "Cosmetic Shop");
+retail[13] = new GLL(22.282411, 114.152352, "Betty Blue", "34B Staunton", "Retail", "Women's Clothing");
+retail[14] = new GLL(22.281725, 114.156788, "Blancpain", "29 Queen's Road Central", "Retail", "Watches");
+retail[15] = new GLL(22.283117, 114.15299, "Bob's Paradise", "41 Peel Street", "Retail", "Pet Retail Store");
+retail[16] = new GLL(22.281712, 114.154823, "BoConcept", "73 Wyndham Street", "Retail", "Furniture");
+retail[17] = new GLL(22.283733, 114.15261, "Bohemian Artistic", "27 Aberdeen Street", "Retail", "Clothing Store");
+retail[18] = new GLL(22.282439, 114.153621, "Bookazine", "46 Lyndhurst Terrace", "Retail", "Book Store");
+retail[19] = new GLL(22.282571, 114.154692, "Bremont Watches", "1 Lyndhurst Terrace", "Retail", "Watch store in Hong Kong");
+retail[20] = new GLL(22.28408, 114.1525, "Callixto", "11 Mee Lun Street", "Retail", "Jewelry and Accesories");
+retail[21] = new GLL(22.282391, 114.155792, "Calzedonia", "62 Queen's Road Central", "Retail", "Italian Legwear");
+retail[22] = new GLL(22.282029, 114.155737, "Canaan Optical", "18 Stanley Street", "Retail", "Glasses Store");
+retail[23] = new GLL(22.284725, 114.153347, "Cecilia Yau Couture", "168 Wellington Street", "Retail", "Womens Clothing, Designer");
+retail[24] = new GLL(22.282717, 114.152151, "Cest Si Bon", "51 Staunton Street", "Retail", "Fashion Boutique");
+retail[25] = new GLL(22.283388, 114.156872, "Chinese Arts & Crafts", "55 Des Voeux Road", "Retail", "Crafts");
+retail[26] = new GLL(22.282255, 114.152014, "Chocolate Rain", "67 Peel Street", "Retail", "Gift Shop/Jewelry");
+retail[27] = new GLL(22.281728, 114.156807, "Chow Tai Fook", "29 Queen's Road Central", "Retail", "Jewelry");
+retail[28] = new GLL(22.280911, 114.156393, "Christian Louboutin", "10-12 Wyndham Street", "Retail", "Shoes");
+retail[29] = new GLL(22.282393, 114.154349, "Clover Garden", "26 Lyndhurst Terrace", "Retail", "Jewelry Store");
+retail[30] = new GLL(22.281954, 114.152459, "CNC Fashion", "24 Elgin Street", "Retail", "Clothing Store");
+retail[31] = new GLL(22.28238, 114.152383, "Coqu", "34A Staunton Street", "Retail", "Women's Clothing");
+retail[32] = new GLL(22.282772, 114.155051, "Corner Block", "50 Stanley Street", "Retail", "Grocery Store");
+retail[33] = new GLL(22.282821, 114.155849, "Cortina Watch", "53 Queen's Road Central", "Retail", "Watches");
+retail[34] = new GLL(22.282779, 114.155367, "COS", "74 Queen's Road Central", "Retail", "Clother");
+retail[35] = new GLL(22.28416, 114.152282, "Creative Coop", "34 Gough Street", "Retail", "Design, Home");
+retail[36] = new GLL(22.280377, 114.153662, "Dogs and the City", "37A Caine Road", "Retail", "Pets Shop");
+retail[37] = new GLL(22.282301, 114.153453, "DOMA Lifestyle", "41 Hollywood Road", "Retail", "Appliances");
+retail[38] = new GLL(22.282406, 114.155889, "Eldorado Watch Co., Ltd.", "58-62 Queen's Road Central", "Retail", "Watches");
+retail[39] = new GLL(22.283228, 114.155968, "Eternity Jewelry", "18 Pottinger Street", "Retail", "Jewelry");
+retail[40] = new GLL(22.283782, 114.152648, "Evelyn Artwear", "21 Aberdeen Street", "Retail", "Boutique");
+retail[41] = new GLL(22.281809, 114.156624, "Falli Fallie", "29 Queen's Road Central", "Retail", "Watches");
+retail[42] = new GLL(22.282212, 114.152001, "Fang Fong Projects", "69-71 Peel Street", "Retail", "Designer Clothing Store");
+retail[43] = new GLL(22.283845, 114.154064, "Fine Glass and Framework Production", "99 Wellington Street", "Retail", "Framing Company");
+retail[44] = new GLL(22.282887, 114.15261, "Fine Jewelry", "8 Elgin Street", "Retail", "Jewelry Store");
+retail[45] = new GLL(22.280158, 114.155029, "FLOS", "44 Wyndham Street", "Retail", "Furniture & Lights");
+retail[46] = new GLL(22.282545, 114.155256, "Foresoon Computer", "40 Stanley Street", "Retail", "Electronic Devices");
+retail[47] = new GLL(22.284901, 114.155688, "Fortress", "107-111 Des Voeux Road", "Retail", "Electronic Devices");
+retail[48] = new GLL(22.28403, 114.157051, "Fotomax", "4 Pottinger Street", "Retail", "Photographic Equipments");
+retail[49] = new GLL(22.283258, 114.154596, "Fox Optical Co. Ltd.", "12 Cochrane Street", "Retail", "Eyewear Store");
+retail[50] = new GLL(22.282828, 114.155218, "Fujifilm", "23-29 Stanley Street", "Retail", "Photographic Equipments");
+retail[51] = new GLL(22.281691, 114.151383, "Fusion by Park n Shop", "88 Caine Road", "Retail", "Super Market");
+retail[52] = new GLL(22.282148, 114.156682, "GAP", "31 Queen's Road Central", "Retail", "Clothes");
+retail[53] = new GLL(22.284076, 114.152993, "Gaudalie", "3 Gough Street", "Retail", "Cosmetics");
+retail[54] = new GLL(22.284028, 114.152494, "Goldyard", "9 Mee Lun Street", "Retail", "Clothing");
+retail[55] = new GLL(22.282434, 114.153067, "Goods of Desire", "48 Hollywood Road", "Retail", "Homeware Retail");
+retail[56] = new GLL(22.282669, 114.15282, "Graham Boutique", "56-58 Hollywood Road", "Retail", "Various Retail Products");
+retail[57] = new GLL(22.283987, 114.153227, "Greenfingers Florist", "6 Aberdeen Street", "Retail", "Florist");
+retail[58] = new GLL(22.284038, 114.152807, "Guess", "4-6 Gough Street", "Retail", "Clothing");
+retail[59] = new GLL(22.283967, 114.154354, "Hei Man Lin Jewellery Co. Ltd.", "134 Queen's Road Central", "Retail", "Jewelry Story");
+retail[60] = new GLL(22.284455, 114.153236, "Hi Angel Shop", "168 Wellington", "Retail", "Womens Clothing");
+retail[61] = new GLL(22.283447, 114.154334, "Ho Kee Electrical Co.", "95 Wellington Road", "Retail", "Various Retail and Supplies");
+retail[62] = new GLL(22.282118, 114.152367, "Ichi Ni San Shop", "16A Elgin Street", "Retail", "Pottery Shop");
+retail[63] = new GLL(22.281302, 114.152221, "Indigo Living", "63-69 Caine Road", "Retail", "Furniture Store");
+retail[64] = new GLL(22.282819, 114.155476, "Intimissimi", "72 Queen's Road Central", "Retail", "Clothes");
+retail[65] = new GLL(22.28369, 114.153879, "JHC Concept Store", "128 Wellington Street", "Retail", "Various Retail Offered");
+retail[66] = new GLL(22.283151, 114.154612, "Kam Bong Jewelry Co.", "14 Cochrane Street", "Retail", "Jewelry");
+retail[67] = new GLL(22.284156, 114.153074, "Kincheng Jewelry Co.", "11 Aberdeen Street", "Retail", "Jewelry Producer Company");
+retail[68] = new GLL(22.282947, 114.154441, "La Farfalla", "98 Wellington Street", "Retail", "Tailor for Men's Suits");
+retail[69] = new GLL(22.282613, 114.154714, "Lane's Bridal", "1 Lyndhurst Terrace", "Retail", "Clothes");
+retail[70] = new GLL(22.282855, 114.154479, "Lapel", "96 Wellington Street", "Retail", "Tailor");
+retail[71] = new GLL(22.281533, 114.155967, "LensCrafters", "1-13 D'Aguilar St", "Retail", "Glasses Store");
+retail[72] = new GLL(22.28239, 114.154287, "Les Nerieidas", "30 Lyndhurst Terrace", "Retail", "Jewelry Store");
+retail[73] = new GLL(22.282644, 114.154109, "Linya Fashion", "38 Cochrane Street", "Retail", "Designer Clothing Store");
+retail[74] = new GLL(22.284134, 114.152495, "Lovers and Friends", "24 Gough Street", "Retail", "Clothing and Accesories");
+retail[75] = new GLL(22.282055, 114.153199, "Low Price Shop", "32 Hollywood Road", "Retail", "Souvenirs");
+retail[76] = new GLL(22.283987, 114.154303, "Lu Yan Sang", "136 Queen's Road Central", "Retail", "Cosmetics");
+retail[77] = new GLL(22.2826, 114.154094, "LUSH", "21 Lyndhurst Terrace", "Retail", "Fresh Handmade Cosmetics");
+retail[78] = new GLL(22.284175, 114.152342, "Magis", "28 Gough Street", "Retail", "Furniture, Design, Lifestyle");
+retail[79] = new GLL(22.28338, 114.152413, "Mammut", "74 Hollywood Road", "Retail", "Sportswear Store");
+retail[80] = new GLL(22.283154, 114.155081, "Mannings", "88 Queen's Road Central", "Retail", "Cosmetic Store");
+retail[81] = new GLL(22.282564, 114.150821, "Mansions Interior", "109B Caine Road", "Retail", "");
+retail[82] = new GLL(22.284154, 114.152716, "Marco Visconti", "14 Gough Street", "Retail", "Womens Clothing and Accesories");
+retail[83] = new GLL(22.282067, 114.153209, "Marks & Spencer", "32 Hollywood Road", "Retail", "Grocery Store");
+retail[84] = new GLL(22.281541, 114.156426, "MCM", "30 Queen's Road Central", "Retail", "Bags");
+retail[85] = new GLL(22.282192, 114.153844, "Mei Lun Jewelry and Jade", "27 Hollywood Road", "Retail", "Jewelry and Jade Pottery Store");
+retail[86] = new GLL(22.282131, 114.152508, "Mint and Lemon", "32 Staunton Street", "Retail", "Women's Clothing Store");
+retail[87] = new GLL(22.282635, 114.154192, "MisterChrono", "19 Lyndhurst Terrace", "Retail", "Leather Goods");
+retail[88] = new GLL(22.283775, 114.152642, "Modele", "25 Aberdeen Street", "Retail", "Clothing Store");
+retail[89] = new GLL(22.283971, 114.152478, "Morn Creations", "7 Mee Lun Street", "Retail", "Backpack Shop");
+retail[90] = new GLL(22.281618, 114.155237, "Mountain Folk Craft", "12 Wo On Lane", "Retail", "");
+retail[91] = new GLL(22.283634, 114.152723, "Mushroom Shop", "14 Aberdeen Street", "Retail", "Boutique");
+retail[92] = new GLL(22.283317, 114.154372, "Name Unkown", "91 Wellington Street", "Retail", "Various Retail Sold Here");
+retail[93] = new GLL(22.282436, 114.154043, "Nature Village Supplements", "36 Lyndhurst Terrace", "Retail", "Health Products");
+retail[94] = new GLL(22.281327, 114.156001, "New Balance", "18 D'Aguilar St", "Retail", "Sports Shoes");
+retail[95] = new GLL(22.284155, 114.156285, "Nike", "41 Connaught Road", "Retail", "Sports");
+retail[96] = new GLL(22.284055, 114.152245, "Okura", "1 Shin Hing Street", "Retail", "Gift Shop that specializes in selling Designer Made Products");
+retail[97] = new GLL(22.283724, 114.152574, "Orient Sense", "29 Aberdeen Street", "Retail", "Jewelry Store");
+retail[98] = new GLL(22.281523, 114.155817, "Pandora", "1-13 D'Aguilar St", "Retail", "Jewelry");
+retail[99] = new GLL(22.282426, 114.154353, "Parfumerie Tresor", "28 Lyndhurst Terrace", "Retail", "Perfume Store");
+retail[100] = new GLL(22.282425, 114.153622, "Patagonia", "46 Lyndhurst Terrace", "Retail", "Men's Clothes");
+retail[101] = new GLL(22.281615, 114.154876, "Persian Arts", "67 Wyndham Street", "Retail", "Carpet");
+retail[102] = new GLL(22.284138, 114.152918, "Petit Bazaar", "9 Gough Street", "Retail", "Kids Clothing");
+retail[103] = new GLL(22.283604, 114.152666, "Petite Petite", "18 Aberdeen Street", "Retail", "Clothing Store");
+retail[104] = new GLL(22.281414, 114.156436, "Philipp Plein", "30 Queen's Road Central", "Retail", "Clothes");
+retail[105] = new GLL(22.282849, 114.15503, "Pick me up", "50 Stanley Street", "Retail", "Clothes Store");
+retail[106] = new GLL(22.282937, 114.152886, "Plant a Plant", "46 Peel Street", "Retail", "Replica Plants and Trees");
+retail[107] = new GLL(22.28416, 114.152271, "Prologue", "3 Shin Hing Street", "Retail", "Tailored Suits: Men's Clothing Store");
+retail[108] = new GLL(22.282967, 114.153023, "QuQu Boutique", "28 Peel Street", "Retail", "Clothing Store");
+retail[109] = new GLL(22.282492, 114.155306, "Sam & Company", "38 Stanley Street", "Retail", "Stationery Store");
+retail[110] = new GLL(22.28316, 114.155096, "SASA", "88 Queen's Road Central", "Retail", "Cosmetic Store");
+retail[111] = new GLL(22.28418, 114.152678, "Sheer", "13 Gough Street", "Retail", "Lingerie");
+retail[112] = new GLL(22.282569, 114.154691, "Sheryia Curtain", "1 Lyndhurst Terrace", "Retail", "Curtains and Fabric Store");
+retail[113] = new GLL(22.282003, 114.157335, "Skechers", "20 Des Voeux Road Central", "Retail", "Shoes");
+retail[114] = new GLL(22.282454, 114.153455, "Solitude", "48 Lyndhurst Terrace", "Retail", "Clothing Store");
+retail[115] = new GLL(22.282217, 114.155794, "St Private i Salon", "1111 Stanley Street", "Retail", "Beauty Products Shop");
+retail[116] = new GLL(22.283633, 114.152508, "Stockholm Shoes", "31 Aberdeen Street", "Retail", "European Shoe Store");
+retail[117] = new GLL(22.282365, 114.156349, "Street Shops", "Chiu Lung Street", "Retail", "");
+retail[118] = new GLL(22.283458, 114.156382, "Suning", "54-58 Des Voeux Road", "Retail", "Electronic Devices");
+retail[119] = new GLL(22.282585, 114.154404, "The Candle Company", "11 Lyndhurst Terrace", "Retail", "Candle Store");
+retail[120] = new GLL(22.28056, 114.157754, "The Landmark", "15 Queen's Road Central", "Retail", "Luxury Stores");
+retail[121] = new GLL(22.282627, 114.15465, "The Vintage Concept", "78 Wellington Street", "Retail", "Watch Store");
+retail[122] = new GLL(22.283947, 114.152877, "THEI", "10 Aberdeen Street", "Retail", "Clothes");
+retail[123] = new GLL(22.282948, 114.154913, "Tin Cheung Camera Company", "50-72 Stanley Street", "Retail", "Photographic Equipments");
+retail[124] = new GLL(22.28305, 114.155646, "TopShop", "59-65 Queen's Road Central", "Retail", "Clothes");
+retail[125] = new GLL(22.284067, 114.152763, "Über Tunique Accesories", "12 Gough Street", "Retail", "Clothing Accesories");
+retail[126] = new GLL(22.282409, 114.15415, "Under Armour", "38 Lyndhurst Terrace", "Retail", "Shoes");
+retail[127] = new GLL(22.284417, 114.152396, "Velo6 - Bike Shop & Cafe", "6 On Wo Lane", "Retail", "Bike Shop and Cafe");
+retail[128] = new GLL(22.282339, 114.152441, "Vera Wang Bride", "39 Staunton Street", "Retail", "Weeding Dress Store");
+retail[129] = new GLL(22.283926, 114.155891, "Vickie", "3 Queen Victoria Street", "Retail", "Shoes");
+retail[130] = new GLL(22.284514, 114.153184, "Vins", "172 Wellington St.", "Retail", "Wine Shop");
+retail[131] = new GLL(22.284141, 114.152447, "Visionaire", "26 Gough Street", "Retail", "Design, Lifestyle");
+retail[132] = new GLL(22.282519, 114.151118, "Wellcome Supermarket", "99 Caine Road", "Retail", "");
+retail[133] = new GLL(22.282683, 114.152531, "Whatever It Takes", "14D Elgin Street", "Retail", "Fitness Equipment and Clothes");
+retail[134] = new GLL(22.282267, 114.152519, "Winnie Couture", "37 Staunton Street", "Retail", "Wedding Dresses");
+retail[135] = new GLL(22.281508, 114.151976, "Winnie's Curtains", "73-73A Caine Road", "Retail", "Jewelry and Curtains Retail");
+retail[136] = new GLL(22.282219, 114.152339, "Wynne Clothes Store", "56 Peel Street", "Retail", "Clothing Store");
+retail[137] = new GLL(22.283847, 114.154077, "Ying Kee Electric", "99c Wellington Street", "Retail", "Electric Supplies, Auto Parts Store");
+
+
 
 /* Initialize the map */
 window.onload = () => {
@@ -321,8 +471,13 @@ window.onload = () => {
   }
   
   /* initially show all Food and Beverage */
-  for (let i = 0; i < 195; ++i) {
+  for (let i = 0; i < 196; ++i) {
     foodAndBeverage[i].marker = L.marker([foodAndBeverage[i].lat, foodAndBeverage[i].lon], {icon: greenIcon}).addTo(mymap).on('click', () => foodAndBeverage[i].show());
+  }
+  
+  /* initially show all Retail */
+  for (let i = 0; i < 138; ++i) {
+    retail[i].marker = L.marker([retail[i].lat, retail[i].lon], {icon: yellowIcon}).addTo(mymap).on('click', () => retail[i].show());
   }
 }
 
@@ -338,11 +493,21 @@ var toggleHS = () => {
 }
 
 var toggleFB = () => {
-  for (let i = 0; i < 195; ++i) {
+  for (let i = 0; i < 196; ++i) {
     if (document.getElementById("fb-cb").checked) {
       foodAndBeverage[i].marker.addTo(mymap);
     } else {
       foodAndBeverage[i].marker.remove();
+    }
+  }
+}
+
+var toggleRet = () => {
+  for (let i = 0; i < 138; ++i) {
+    if (document.getElementById("fb-ret").checked) {
+      retail[i].marker.addTo(mymap);
+    } else {
+      retail[i].marker.remove();
     }
   }
 }
