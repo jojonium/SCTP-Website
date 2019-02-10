@@ -44,7 +44,7 @@ div#right-bar-interior {
   flex-grow: 1;
   background-color: #D81159;
   color: white;
-  padding: 40px;
+  padding: 20px 40px 10px 40px;
   overflow-y: auto;
   box-sizing: border-box;
   display: flex;
