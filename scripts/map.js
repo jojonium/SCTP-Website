@@ -3,8 +3,23 @@ var mymap;
 var historicSites  = new Array(22);
 var foodAndBeverage = new Array(196);
 var retail = new Array(138);
+var services = new Array(57);
+var culturalAsset = new Array(26);
+var gallery = new Array(26);
+var residence = new Array(13);
+var recreation = new Array(9);
+var education = new Array(6);
 
 /* markers */
+var redIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-red.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
 var blueIcon = new L.Icon({
 	iconUrl: 'scripts/img/marker-icon-2x-blue.png',
 	shadowUrl: 'scripts/img/marker-shadow.png',
@@ -31,6 +46,43 @@ var yellowIcon = new L.Icon({
 	popupAnchor: [1, -34],
 	shadowSize: [41, 41]
 });
+
+var violetIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-violet.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var orangeIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-orange.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var greyIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-grey.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var blackIcon = new L.Icon({
+	iconUrl: 'scripts/img/marker-icon-2x-black.png',
+	shadowUrl: 'scripts/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
 
 /* Graded Historic Site class */
 class GHS {
@@ -73,9 +125,7 @@ class GLL {
     document.getElementById("rb-content").innerHTML = 
       `${this.address} <br><br> ${this.comments}`;
     document.getElementById("rb-source").innerHTML = 
-      `Source: <a href="https://web.wpi.edu/Pubs/E-project/Available/E-project-032017-092307/unrestricted/WPI_IQP_2017_-_Heritage_Conservation_and_Online_Platform_in_the_Smart_Cultural_Triangle_Precinct,_Hong_Kong.pdf">
-        Mateo Carvajal, Zhi Hui, and Peter Nolan
-      </a>. Updated by Joseph Petitti`;
+      `Source: <a href="https://web.wpi.edu/Pubs/E-project/Available/E-project-032017-092307/unrestricted/WPI_IQP_2017_-_Heritage_Conservation_and_Online_Platform_in_the_Smart_Cultural_Triangle_Precinct,_Hong_Kong.pdf">Mateo Carvajal, Zhi Hui, and Peter Nolan</a>. Updated by Joseph Petitti`;
   };
 }
 
@@ -440,6 +490,148 @@ retail[135] = new GLL(22.281508, 114.151976, "Winnie's Curtains", "73-73A Caine 
 retail[136] = new GLL(22.282219, 114.152339, "Wynne Clothes Store", "56 Peel Street", "Retail", "Clothing Store");
 retail[137] = new GLL(22.283847, 114.154077, "Ying Kee Electric", "99c Wellington Street", "Retail", "Electric Supplies, Auto Parts Store");
 
+services[0] = new GLL(22.282399, 114.1546, "12 Lyndhurst Terrace", "12 Lyndhurst Terrace", "Services", "Various Services");
+services[1] = new GLL(22.282742, 114.15489, "Alfa House", "59 Wellington Street", "Services", "Small Business; Florist");
+services[2] = new GLL(22.282767, 114.154873, "Alins Tailor", "59-61 Wellington Street", "Services", "Tailor");
+services[3] = new GLL(22.282885, 114.153813, "Alta Gastronomic", "5 Gage Street", "Services", "Medicine");
+services[4] = new GLL(22.282644, 114.152497, "Artland Plastic Advertising", "12 Elgin Street", "Services", "");
+services[5] = new GLL(22.282883, 114.15698, "Bangkok Bank", "28 Des Voeux Road", "Services", "Bank");
+services[6] = new GLL(22.280302, 114.160235, "Bank of China", "2A Des Voeux Road", "Services", "Bank");
+services[7] = new GLL(22.281188, 114.156286, "Bank of China", "1 Wyndham Street", "Services", "");
+services[8] = new GLL(22.283887, 114.156554, "Bank of China", "71 Des Voeux Road", "Services", "Bank");
+services[9] = new GLL(22.283618, 114.153979, "Butterfly on Wellington", "122 Wellington Street", "Services", "Hotel");
+services[10] = new GLL(22.28221, 114.155249, "Centaline Property", "39-41 Wellington Street", "Services", "Housing Services");
+services[11] = new GLL(22.284066, 114.153021, "Central District Kai Fong Welfare Association", "11 Aberdeen Street", "Services", "");
+services[12] = new GLL(22.283562, 114.156752, "China Citic Bank International", "61-65 Des Voeux Road Central", "Services", "Bank");
+services[13] = new GLL(22.283969, 114.156077, "Chiyu Banking Corporation Ltd.", "78 Des Voeux Road", "Services", "Bank");
+services[14] = new GLL(22.282573, 114.15706, "Chong Hing Bank", "24 Des Voeux Road Central", "Services", "Bank");
+services[15] = new GLL(22.281862, 114.157419, "Citi Bank", "20 Pedder Street", "Services", "");
+services[16] = new GLL(22.282183, 114.157844, "DahSing Bank", "19 Des Voeux Road Central", "Services", "Bank");
+services[17] = new GLL(22.283238, 114.157072, "DBS", "45 Des Voeux Road Central", "Services", "Bank");
+services[18] = new GLL(22.28179, 114.152854, "DK Aroma Therapy", "16A Staunton Street", "Services", "Aromatherapy Service");
+services[19] = new GLL(22.282559, 114.154303, "Flight Center", "17 Lyndhurst Terrace", "Services", "Tour Guide Agency");
+services[20] = new GLL(22.283107, 114.154802, "Hair Passion", "66-72 Stanley Street", "Services", "Haircut");
+services[21] = new GLL(22.282182, 114.156091, "Hang Seng Bank", "50-52 Queen's Road", "Services", "Bank");
+services[22] = new GLL(22.281999, 114.153661, "Healthy Foot", "24 Hollywood Road", "Services", "Foot Massage");
+services[23] = new GLL(22.282128, 114.152508, "Hippfish", "32 Staunton Street", "Services", "Hair Stylist");
+services[24] = new GLL(22.28263, 114.153743, "HSBC", "23-29 Lyndhurst Terrace", "Services", "Bank");
+services[25] = new GLL(22.283947, 114.154365, "HSBC Bank", "132 Queen's Road Central", "Services", "Branch of HSBC Bank");
+services[26] = new GLL(22.283347, 114.156115, "Hung Fat Pawn Shop", "6-8 Pottinger Street", "Services", "Pawn Shop");
+services[27] = new GLL(22.283847, 114.154533, "ICBC", "122-126 Queen's Road Central", "Services", "Bank");
+services[28] = new GLL(22.282399, 114.154256, "Jenny Packham", "32 Lyndhurst Terrace", "Services", "Wedding Dress Designer");
+services[29] = new GLL(22.27974, 114.155217, "La Belle Salon", "1 Glenealy", "Services", "Hair & Nail Salon");
+services[30] = new GLL(22.281162, 114.1523, "Lavande Nail Spa", "61 Caine Road", "Services", "Nail Salon");
+services[31] = new GLL(22.280571, 114.15386, "Lee Wah Art & Frames", "5 Chancery Lane", "Services", "Frame Work");
+services[32] = new GLL(22.282571, 114.154526, "Man Fong Picture Frame Co., Ltd.", "12-24 Lyndhurst Terrace", "Services", "Frame Work");
+services[33] = new GLL(22.283346, 114.15453, "Michelle Rene", "15 Cochrane Street", "Services", "Hair Dresser");
+services[34] = new GLL(22.283133, 114.154498, "Mina Dev'Wil", "28 Cochrane Street", "Services", "Hairdresser");
+services[35] = new GLL(22.28302, 114.152876, "Ming Fat Realty", "57 Hollywood Road", "Services", "Real Estate Agency");
+services[36] = new GLL(22.282999, 114.153297, "My Pal Laundary", "26 Peel Street", "Services", "Laundromat");
+services[37] = new GLL(22.282072, 114.155639, "Noble hair", "20 Stanley Street", "Services", "Haircut");
+services[38] = new GLL(22.282961, 114.150914, "O2", "17 Wa In Fong E", "Services", "Haircut");
+services[39] = new GLL(22.28243, 114.15364, "Oriental Crystal Commercial Building", "46 Lyndhurst Terrace", "Services", "Various Retail and Services");
+services[40] = new GLL(22.280235, 114.154572, "Ovolo Central", "2 Arbuthnot Road", "Services", "Hotel");
+services[41] = new GLL(22.282185, 114.153791, "Professional Properties Co.", "27 Hollywood Road", "Services", "Housing Services");
+services[42] = new GLL(22.283638, 114.152746, "Raw Hair", "14 Aberdeen Street", "Services", "Hair Salon");
+services[43] = new GLL(22.281998, 114.152203, "Sawasdee Massage", "23 Elgin Street", "Services", "Massage Service");
+services[44] = new GLL(22.283597, 114.153025, "Shing Hing Frozen Meat and Provision", "36 Gage Street", "Services", "Meat Retailer");
+services[45] = new GLL(22.282609, 114.154121, "Soho Square", "21A-21B Lyndhurst Terrace", "Services", "Various Retail and Services");
+services[46] = new GLL(22.282714, 114.157057, "Standard Chartered", "26 Des Voeux Road Central", "Services", "Bank");
+services[47] = new GLL(22.283846, 114.154054, "Stationary Printing", "99 Wellington Street", "Services", "Printing Shop");
+services[48] = new GLL(22.283871, 114.156087, "Tak Wing Pawn Shop", "72 Des Voeux Road Central", "Services", "Pawn Shop");
+services[49] = new GLL(22.282047, 114.155436, "The Loop", "33 Wellington Street", "Services", "Haircut");
+services[50] = new GLL(22.283097, 114.154514, "The Strand", "18 Cochrane Street", "Services", "Hairdresser/Beautician");
+services[51] = new GLL(22.283162, 114.154519, "Thir2 Salon", "32 Cochrane Street", "Services", "Hair Salon");
+services[52] = new GLL(22.280523, 114.155879, "Toni & Guy", "Wyndham Street", "Services", "Haircut");
+services[53] = new GLL(22.283344, 114.154533, "Travel Expert", "15 Cochrane Street", "Services", "Overseas Travel Planner");
+services[54] = new GLL(22.283779, 114.152653, "Wood Lik Printing Company", "23 Aberdeen Street", "Services", "Printing Service");
+services[55] = new GLL(22.28392, 114.149539, "YMCA", "51 Bridges Street", "Services", "Community, Youth Organizations, Pool");
+services[56] = new GLL(22.283152, 114.154762, "Zentro", "66 Stanley Street", "Services", "Haircut");
+
+culturalAsset[0] = new GLL(22.2834, 114.154088, "118 Wellington Street", "118 Wellington Street", "Cultural Asset", "Contains Restaurants and other Services. Designated Heritage Site");
+culturalAsset[1] = new GLL(22.282704, 114.152808, "Arch Angel Art", "58 Hollywood Road", "Cultural Asset", "Antique Shop");
+culturalAsset[2] = new GLL(22.283098, 114.15282, "C.Y.Tse Antiques", "63 Hollywood Road", "Cultural Asset", "Antique Store");
+culturalAsset[3] = new GLL(22.284481, 114.153239, "Chinese Crafts Shop", "168 Wellington Street", "Cultural Asset", "");
+culturalAsset[4] = new GLL(22.281964, 114.154379, "Chu's", "1 Hollywood Road", "Cultural Asset", "Antique Store");
+culturalAsset[5] = new GLL(22.282052, 114.150809, "Dr. Sun Yat-Sen Museum", "7 Castle Road", "Cultural Asset", "Museum");
+culturalAsset[6] = new GLL(22.280343, 114.153712, "Fan Hing Christian Association Ltd.", "29-31 Caine Road", "Cultural Asset", "");
+culturalAsset[7] = new GLL(22.283362, 114.154591, "Good Spring Company Limited", "8 Cochrane Street", "Cultural Asset", "Chinese Herbalist Store");
+culturalAsset[8] = new GLL(22.283778, 114.151066, "Grand Ho", "108 Hollywood Road", "Cultural Asset", "Street Art Gallery");
+culturalAsset[9] = new GLL(22.282189, 114.153826, "Honeychurch Antiques", "29 Hollywood Road", "Cultural Asset", "One of the oldest Antique Stores on Hong Kong");
+culturalAsset[10] = new GLL(22.281098, 114.151996, "Hong Kong Baptist Church", "50 Caine Street", "Cultural Asset", "Baptist Church on Aberdeen. Seems to also have other facilities");
+culturalAsset[11] = new GLL(22.282178, 114.151288, "House of Grace Hong Kong Baptist Church", "97 Caine Street", "Cultural Asset", "Baptist Church on Caine Street");
+culturalAsset[12] = new GLL(22.28373, 114.155758, "JP Book Store", "9 Queen Victoria Street", "Cultural Asset", "");
+culturalAsset[13] = new GLL(22.284095, 114.15135, "Lee Hing Antiques", "123 Hollywood Road", "Cultural Asset", "Antique Shop");
+culturalAsset[14] = new GLL(22.280708, 114.153644, "Lok Man Rare Books", "6 Chancery Lane", "Cultural Asset", "Rare Books");
+culturalAsset[15] = new GLL(22.283771, 114.152904, "Murder Site of Yeung Ku-Wan", "52 Gage Street", "Cultural Asset", "Site of the Assassination of Yeung Ku-Wan");
+culturalAsset[16] = new GLL(22.283329, 114.152444, "Oi Ling's Antiques", "72 Hollywood Road", "Cultural Asset", "Antique Shop");
+culturalAsset[17] = new GLL(22.283338, 114.152453, "Palais Royal Paris", "74A Hollywood Road", "Cultural Asset", "Antique Jewelry Store");
+culturalAsset[18] = new GLL(22.284575, 114.153176, "Progressive Press", "174 Wellington Street", "Cultural Asset", "Printing Services");
+culturalAsset[19] = new GLL(22.28223, 114.153717, "Star Company", "31-33 Hollywood Road", "Cultural Asset", "Wooden Carvings");
+culturalAsset[20] = new GLL(22.283615, 114.153964, "Taste of Graham", "15-25 Graham Street", "Cultural Asset", "Street Market that attracts a great amount of foot traffic and acts as a center for nearby produce/meat stands");
+culturalAsset[21] = new GLL(22.283424, 114.154061, "Tenement House", "120 Wellington Street", "Cultural Asset", "Tenement Building, one of the last buildings that have not been redeveloped. Is located near the Wet Markets, and was at one point located next to a Designated Cultural Site, which has now been torn down.");
+culturalAsset[22] = new GLL(22.28134, 114.15283, "The Hong Kong Swatow Christian Church", "20 Shelley Street", "Cultural Asset", "Christian Church");
+culturalAsset[23] = new GLL(22.282167, 114.15193, "Tung Shan Porcelain", "69-71 Peel Street", "Cultural Asset", "Porcelain Art Shop");
+culturalAsset[24] = new GLL(22.283017, 114.154668, "Tung Sin Tan", "75-77 Wellington Street", "Cultural Asset", "Temple & Charity Organization");
+culturalAsset[25] = new GLL(22.281484, 114.155552, "Yung Kee Restaurant", "32-40 Wellington Street", "Cultural Asset", "Famous Chinese Restaurant with 70 years history.");
+
+gallery[0] = new GLL(22.283812, 114.152189, "Ancient Chinese Art", "97 Hollywood Road", "Gallery", "Art Gallery");
+gallery[1] = new GLL(22.283666, 114.152465, "Art Futures Gallery", "85 Hollywood Road", "Gallery", "Art Gallery");
+gallery[2] = new GLL(22.283755, 114.152313, "Cheong Ming Antiques", "87 Hollywood Road", "Gallery", "");
+gallery[3] = new GLL(22.28199, 114.154436, "Connoisseur Art Gallery", "1 Hollywood Road", "Gallery", "");
+gallery[4] = new GLL(22.28279, 114.152331, "Culture Club Gallery", "15 Elgin Street", "Gallery", "Art Gallery");
+gallery[5] = new GLL(22.280307, 114.153357, "Find Art Studio", "28 Caine Road", "Gallery", "");
+gallery[6] = new GLL(22.28017, 114.155619, "Fringe Club", "2 Lower Albert Road", "Gallery", "For over 30 years since established, the Fringe Club has become a vibrant contemporary arts space where artists create and show their work, and those who enjoy the arts come to meet and see shows. Facilities for exhibitions and performances here are offered rent-free to both emerging and professional artists in Hong Kong and from overseas");
+gallery[7] = new GLL(22.283955, 114.152235, "Galerie Ora Ora", "7 Shin Hing Street", "Gallery", "Art gallery");
+gallery[8] = new GLL(22.282231, 114.153721, "Gallery One", "31-33 Hollywood Road", "Gallery", "Antique Store and Art Gallery");
+gallery[9] = new GLL(22.284498, 114.149827, "Hollywood Galleries", "173 Hollywood Road", "Gallery", "Art Gallery");
+gallery[10] = new GLL(22.28409, 114.151359, "Joyce Gallery", "123 Hollywood Road", "Gallery", "Art Gallery");
+gallery[11] = new GLL(22.283216, 114.152339, "Karin Webber Gallery", "20 Aberdeen Street", "Gallery", "Gallery on Aberdeen");
+gallery[12] = new GLL(22.283238, 114.152669, "Kunquat Gallery", "73 Hollywood Road", "Gallery", "Art Gallery");
+gallery[13] = new GLL(22.283375, 114.152425, "La Galerie", "74 Hollywood Road", "Gallery", "Art Gallery");
+gallery[14] = new GLL(22.28012, 114.155013, "Opera Gallery", "52 Wyndham Street", "Gallery", "");
+gallery[15] = new GLL(22.284202, 114.152593, "Rare by Oulton", "19 Gough Street", "Gallery", "Antiques & Rare objects");
+gallery[16] = new GLL(22.282695, 114.152864, "Royal Selanger", "54 Hollywood Road", "Gallery", "Art Gallery");
+gallery[17] = new GLL(22.284086, 114.150613, "Ruyi 149", "149 Hollywood Road", "Gallery", "Art Gallery");
+gallery[18] = new GLL(22.28338, 114.150768, "Select-18", "18 Bridges Street", "Gallery", "Antique Gallery");
+gallery[19] = new GLL(22.283107, 114.152248, "Soul Art Shop", "24-26 Aberdeen Street", "Gallery", "Art Shop outside the PMQ");
+gallery[20] = new GLL(22.283764, 114.152301, "True Art and Curios", "89 Hollywood Road", "Gallery", "");
+gallery[21] = new GLL(22.280753, 114.15335, "10 Chancery Lane", "10 Chancery Lane", "Gallery", "");
+gallery[22] = new GLL(22.280051, 114.155159, "Wellington Gallery", "36 Wyndham Street", "Gallery", "");
+gallery[23] = new GLL(22.282815, 114.153027, "White Stone Gallery", "57-59 Hollywood Road", "Gallery", "Art Gallery");
+gallery[24] = new GLL(22.28198, 114.154377, "Yan Gallery", "1 Hollywood Road", "Gallery", "");
+gallery[25] = new GLL(22.282657, 114.152919, "YellowKorner", "58 Hollywood Road", "Gallery", "Art Gallery");
+
+residence[0] = new GLL(22.282945, 114.154728, "71-73 Wellington Street", "71-73 Wellington Street", "Residence", "Residence Building");
+residence[1] = new GLL(22.278863, 114.154261, "Caritas House", "2-8 Caine Road", "Residence", "");
+residence[2] = new GLL(22.28172, 114.152617, "Choy Lee House", "34 Elgin Street", "Residence", "Residence");
+residence[3] = new GLL(22.280333, 114.153383, "Dragon Court X", "28 Caine Road", "Residence", "");
+residence[4] = new GLL(22.282779, 114.153091, "Madera Hollywood", "53 Hollywood Road", "Residence", "Hotel");
+residence[5] = new GLL(22.281843, 114.152566, "Million City", "26-30 Elgin Street", "Residence", "Residence");
+residence[6] = new GLL(22.281775, 114.152303, "Residence", "39 Elgin Street", "Residence", "Residence");
+residence[7] = new GLL(22.281531, 114.152324, "Residence", "45 Elgin Street", "Residence", "Residence");
+residence[8] = new GLL(22.281137, 114.152602, "The Elgin", "51 Elgin Street", "Residence", "Residence");
+residence[9] = new GLL(22.282393, 114.154152, "The Mood", "38 Lyndhurst Terrace", "Residence", "Serviced Apartments");
+residence[10] = new GLL(22.283093, 114.152882, "The Soho", "69 Hollywood Road", "Residence", "Hotel");
+residence[11] = new GLL(22.282815, 114.154521, "Tung Chai Building", "86-90 Wellington Street", "Residence", "Residence in Wellington");
+residence[12] = new GLL(22.28376, 114.154111, "Yin Serviced Appartments", "97A Wellington Street", "Residence", "Residential Building located above shops");
+
+recreation[0] = new GLL(22.281388, 114.152461, "Ayurvedo Spa", "49 Elgin Street", "Recreation", "Health Spa");
+recreation[1] = new GLL(22.282119, 114.154001, "Buddha Lounge", "23 Hollywood Road", "Recreation", "Lounge");
+recreation[2] = new GLL(22.283686, 114.153897, "Global Wellness", "128 Wellington Street", "Recreation", "Wellness");
+recreation[3] = new GLL(22.282063, 114.153212, "Pure Fitness", "32 Hollywood Road", "Recreation", "Fitness Center");
+recreation[4] = new GLL(22.282279, 114.152153, "Sideways Driving Club", "65 Peel Street", "Recreation", "Driving Club");
+recreation[5] = new GLL(22.280015, 114.15524, "Studio Fitness", "34 Wyndham Street", "Recreation", "Gym");
+recreation[6] = new GLL(22.281815, 114.155861, "The Hong Kong Jockey Club", "10-12 Stanley Street", "Recreation", "Jockey Club");
+recreation[7] = new GLL(22.283359, 114.154558, "Various Recreation", "13-17 Cochrane Street", "Recreation", "Various Recreation Services");
+recreation[8] = new GLL(22.284006, 114.152085, "Yoga BamBam", "10 Shin Hing Street", "Recreation", "Yoga Studio");
+
+education[0] = new GLL(22.282428, 114.150882, "Cannan Nursery", "99 Caine Road", "Education", "");
+education[1] = new GLL(22.283823, 114.149275, "Island Christian School", "70 Bridges Street", "Education", "");
+education[2] = new GLL(22.283425, 114.150063, "Kings College Old Boys Association Primary School", "58 Bridges Street", "Education", "");
+education[3] = new GLL(22.280497, 114.152947, "Sacred Heart Canossian School Private Section", "26 Caine Road", "Education", "Canossian School");
+education[4] = new GLL(22.281593, 114.151958, "True Light Kindergarten", "75 Caine Street", "Education", "Kindergarten in Hong Kong");
+education[5] = new GLL(22.282326, 114.152769, "Wow Tutors", "45 Graham Street", "Education", "Tutoring Services");
 
 
 /* Initialize the map */
@@ -479,6 +671,36 @@ window.onload = () => {
   for (let i = 0; i < 138; ++i) {
     retail[i].marker = L.marker([retail[i].lat, retail[i].lon], {icon: yellowIcon}).addTo(mymap).on('click', () => retail[i].show());
   }
+  
+  /* initially show all Services */
+  for (let i = 0; i < 57; ++i) {
+    services[i].marker = L.marker([services[i].lat, services[i].lon], {icon: violetIcon}).addTo(mymap).on('click', () => services[i].show());
+  }
+  
+  /* initially show all Cultural Assets */
+  for (let i = 0; i < 26; ++i) {
+    culturalAsset[i].marker = L.marker([culturalAsset[i].lat, culturalAsset[i].lon], {icon: redIcon}).addTo(mymap).on('click', () => culturalAsset[i].show());
+  }
+  
+  /* initially show all Galleries */
+  for (let i = 0; i < 26; ++i) {
+    gallery[i].marker = L.marker([gallery[i].lat, gallery[i].lon], {icon: orangeIcon}).addTo(mymap).on('click', () => gallery[i].show());
+  }
+  
+  /* initially show all Residence */
+  for (let i = 0; i < 13; ++i) {
+    residence[i].marker = L.marker([residence[i].lat, residence[i].lon], {icon: greyIcon}).addTo(mymap).on('click', () => residence[i].show());
+  }
+  
+  /* initially show all Recreation */
+  for (let i = 0; i < 9; ++i) {
+    recreation[i].marker = L.marker([recreation[i].lat, recreation[i].lon], {icon: redIcon}).addTo(mymap).on('click', () => recreation[i].show());
+  }
+  
+  /* initially show all Education */
+  for (let i = 0; i < 6; ++i) {
+    education[i].marker = L.marker([education[i].lat, education[i].lon], {icon: blackIcon}).addTo(mymap).on('click', () => education[i].show());
+  }
 }
 
 /* Handle checkboxes changing */
@@ -508,6 +730,66 @@ var toggleRet = () => {
       retail[i].marker.addTo(mymap);
     } else {
       retail[i].marker.remove();
+    }
+  }
+}
+
+var toggleSer = () => {
+  for (let i = 0; i < 57; ++i) {
+    if (document.getElementById("fb-ser").checked) {
+      services[i].marker.addTo(mymap);
+    } else {
+      services[i].marker.remove();
+    }
+  }
+}
+
+var toggleCA = () => {
+  for (let i = 0; i < 26; ++i) {
+    if (document.getElementById("fb-ca").checked) {
+      culturalAsset[i].marker.addTo(mymap);
+    } else {
+      culturalAsset[i].marker.remove();
+    }
+  }
+}
+
+var toggleGal = () => {
+  for (let i = 0; i < 26; ++i) {
+    if (document.getElementById("fb-gal").checked) {
+      gallery[i].marker.addTo(mymap);
+    } else {
+      gallery[i].marker.remove();
+    }
+  }
+}
+
+var toggleRes = () => {
+  for (let i = 0; i < 13; ++i) {
+    if (document.getElementById("fb-res").checked) {
+      residence[i].marker.addTo(mymap);
+    } else {
+      residence[i].marker.remove();
+    }
+  }
+}
+
+var toggleRec = () => {
+  for (let i = 0; i < 9; ++i) {
+    if (document.getElementById("fb-rec").checked) {
+      recreation[i].marker.addTo(mymap);
+    } else {
+      recreation[i].marker.remove();
+    }
+  }
+}
+
+var toggleEdu = () => {
+  for (let i = 0; i < 6; ++i) {
+    if (document.getElementById("fb-edu").checked) {
+      education[i].marker.addTo(mymap);
+    } else {
+      education[i].marker.remove();
     }
   }
 }
