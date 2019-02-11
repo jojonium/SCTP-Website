@@ -85,18 +85,18 @@ var blackIcon = new L.Icon({
 
 
 /* Graded Historic Site class */
-class GHS {
-  constructor(lat, lon, name, grade, type, comments) {
+var GHS = function(lat, lon, name, grade, type, comments) {
     this.lat = lat;
     this.lon = lon;
     this.name = name;
     this.grade = grade;
     this.type = type;
     this.comments = comments;
-  };
+};
   
+GHS.prototype = {
   /* displays info about this GHS in the right bar */
-  show = () => {
+  show: () => {
     document.getElementById("rb-title").innerHTML = this.name;
     document.getElementById("rb-subtitle").innerHTML = this.type;
     document.getElementById("rb-content").innerHTML = this.comments;
@@ -104,30 +104,30 @@ class GHS {
       `Source: <a href="http://www5.lcsd.gov.hk/internet/index.html">
         Geographic Information System on Hong Kong Heritage
       </a>`;
-  };
-}
+  }
+};
 
 /* Ground Level Location class */
-class GLL {
-  constructor(lat, lon, name, address, type, comments) {
+var GLL = function(lat, lon, name, address, type, comments) {
     this.lat = lat;
     this.lon = lon;
     this.name = name;
     this.address = address;
     this.type = type;
     this.comments = comments;
-  };
-  
+};
+
+GLL.prototype = {
   /* displays info about this GLL in the right bar */
-  show = () => {
+  show: () => {
     document.getElementById("rb-title").innerHTML = this.name;
     document.getElementById("rb-subtitle").innerHTML = this.type;
     document.getElementById("rb-content").innerHTML = 
       `${this.address} <br><br> ${this.comments}`;
     document.getElementById("rb-source").innerHTML = 
       `Source: <a href="https://web.wpi.edu/Pubs/E-project/Available/E-project-032017-092307/unrestricted/WPI_IQP_2017_-_Heritage_Conservation_and_Online_Platform_in_the_Smart_Cultural_Triangle_Precinct,_Hong_Kong.pdf">Mateo Carvajal, Zhi Hui, and Peter Nolan</a>. Updated by Joseph Petitti`;
-  };
-}
+  }
+};
 
 historicSites[0] = new GHS(22.280058, 114.156045, "Bishop's House", 1, "Historic Building", "The Bishop's House was originally built in 1848 and rebuilt in 1851. Part of the premises was used as a school of St. Paul's College. It now serves as the office of the Anglican Archbishop of Hong Kong.");
 historicSites[1] = new GHS(22.2813893, 114.1539173, "Central Police Station Compound", 1, "Historic Building & Anchoring Buildings", "Contains the Victoria Prison, The Magistracy, and the Central Police Station");
