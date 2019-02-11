@@ -96,7 +96,7 @@ var GHS = function(lat, lon, name, grade, type, comments) {
   
 GHS.prototype = {
   /* displays info about this GHS in the right bar */
-  show: () => {
+  show: function() {
     document.getElementById("rb-title").innerHTML = this.name;
     document.getElementById("rb-subtitle").innerHTML = this.type;
     document.getElementById("rb-content").innerHTML = this.comments;
@@ -119,7 +119,7 @@ var GLL = function(lat, lon, name, address, type, comments) {
 
 GLL.prototype = {
   /* displays info about this GLL in the right bar */
-  show: () => {
+  show: function() {
     document.getElementById("rb-title").innerHTML = this.name;
     document.getElementById("rb-subtitle").innerHTML = this.type;
     document.getElementById("rb-content").innerHTML = 
