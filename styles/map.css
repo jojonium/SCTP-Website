@@ -34,7 +34,7 @@ div#right-bar-exterior {
   right: 0;
   z-index: 2;
   width: 20%;
-  min-width: 440px;
+  min-width: 500px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -84,11 +84,17 @@ h3#rb-subtitle {
 div#toggle-bar {
   background-color: #006BA6;
   color: #ffffff;
-  padding: 10px;
+  display: flex;
+  padding: 10px
 }
 
 div.leaflet-bottom.leaflet-right {
   display: none;
+}
+
+div.tb-col {
+  flex-grow: 1;
+  text-align: right;
 }
 
 /****** Rules for mobile ******/
