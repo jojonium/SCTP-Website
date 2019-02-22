@@ -10,6 +10,7 @@ div.pic-box {
   padding: 5px;
   margin: 10px 0;
   background-color: #ececec;
+  width: 260px;
 }
 
 div.pic-box h4 {
